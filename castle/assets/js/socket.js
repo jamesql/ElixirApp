@@ -60,4 +60,10 @@ channel.join()
   .receive("ok", resp => { console.log("Joined successfully", resp) })
   .receive("error", resp => { console.log("Unable to join", resp) })
 
+// Socket Message Handler
+channel.on("HELLO", payload => {
+  console.log(payload);
+})
+
+
 export default socket

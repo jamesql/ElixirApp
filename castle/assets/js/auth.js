@@ -1,8 +1,7 @@
 
 class Auth {
-    url;
     constructor() {
-        
+
     }
 
 }
