@@ -10,8 +10,9 @@ config :castle, Castle.Repo,
   pool_size: 10
 
 # Config for Snowflakes (in ms)
-config :castle, Castle.Snowflake,
-  epoch: "1234567890123456789"
+config :snowflake,
+  machine_id: 69,
+  epoch: 1615387493394
 
 # For development, we disable any cache and enable
 # debugging and code reloading.
