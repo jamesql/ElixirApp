@@ -9,6 +9,10 @@ config :castle, Castle.Repo,
   show_sensitive_data_on_connection_error: true,
   pool_size: 10
 
+# BCrypt Config
+config :castle, CastleWeb.Bcrypt,
+  salt: "$bruhthisaggoddamnsaltonGOD$"
+
 # For development, we disable any cache and enable
 # debugging and code reloading.
 #
