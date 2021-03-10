@@ -18,4 +18,13 @@ defmodule CastleWeb.Router do
 
     get "/", PageController, :index
   end
+
+  scope "/api", CastleWeb do
+    pipe_through :api
+
+    post "/login", APIController, :login
+    post "/register", APIController, :register
+
+  end
+  
 end
