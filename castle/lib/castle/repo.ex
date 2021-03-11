@@ -8,4 +8,6 @@ defmodule Castle.Repo do
     children = [
       Friends.Repo
     ]
+  end 
+  
 end

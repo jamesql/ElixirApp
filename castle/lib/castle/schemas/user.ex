@@ -1,8 +1,8 @@
-defmodule Castle.Structures.UserSocket do
+defmodule Castle.Structures.User do
     use Ecto.Schema
 
     schema "user" do
-        field :id, :string
+        field :uid, :string
         field :password, :string
     end
 
