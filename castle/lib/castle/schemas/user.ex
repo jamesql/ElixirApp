@@ -6,4 +6,9 @@ defmodule Castle.Structures.User do
         field :password, :string
     end
 
+    def changeset(struct, params) do
+        struct
+        |> cast(params, [:uid, :password])
+    end
+
 end
