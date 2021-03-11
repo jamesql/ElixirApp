@@ -9,4 +9,7 @@ defmodule CastleWeb.APIController do
     text conn, "Test"
   end
 
+  def rd_body() do
+  end
+
 end
