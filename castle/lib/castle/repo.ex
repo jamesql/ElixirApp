@@ -6,8 +6,8 @@ defmodule Castle.Repo do
   def start(_,_) do
     # Start supervisor
     children = [
-      Friends.Repo
+      Castle.Repo
     ]
   end 
-  
+
 end
