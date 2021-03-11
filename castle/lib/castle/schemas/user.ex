@@ -1,14 +1,15 @@
 defmodule Castle.Structures.User do
     use Ecto.Schema
+    import Ecto.Changeset
 
-    schema "user" do
-        field :uid, :string
+    schema "users" do
         field :password, :string
+        has_many :classes, Castle.Structures.Class
     end
 
     def changeset(struct, params) do
         struct
-        |> cast(params, [:uid, :password])
+        |> cast(params, [:password, :classes])
     end
 
 end
