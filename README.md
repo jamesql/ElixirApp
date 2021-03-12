@@ -2,7 +2,7 @@
 > Template Elixir Web App.
 
 ## Project Purpose
-Made this template to make future projects with elixir easier.
+This project is too help me learn Elixir, learn the Phoenix framework and create a template to make creating Elixir apps easier in the future.
 
 ## File Structure
     ./
