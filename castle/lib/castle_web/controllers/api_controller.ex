@@ -1,10 +1,11 @@
 defmodule CastleWeb.APIController do
   use CastleWeb, :controller
 
-  def login(conn, _params) do
+  def login(conn, params) do
+    {username, password} = {params["username"], params["password"]}
     f =
         conn
-        |> send_resp(200, "OK")
+        |> send_resp(200, username)
   end
 
   def register(conn, _params) do
