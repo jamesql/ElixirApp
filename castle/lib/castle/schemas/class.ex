@@ -2,9 +2,10 @@ defmodule Castle.Structures.Class do
     use Ecto.Schema
     import Ecto.Changeset
 
-    schema "class" do
-        belongs_to :user, Castle.Structures.User
-        field :data, :string
+    schema "classes" do
+        field :cid, :string
+        field :name, :string
+        many_to_many :members, Castle.Structures.User, join_through: "class_members"
     end
 
     def changeset(struct, params) do
