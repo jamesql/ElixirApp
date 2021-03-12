@@ -2,10 +2,14 @@ defmodule CastleWeb.APIController do
   use CastleWeb, :controller
 
   def login(conn, params) do
-    {username, password} = {params["username"], params["password"]}
-    f =
-        conn
-        |> json(%{id: 123})
+    case params do
+        %{"username" => username, "password" => password} -> 
+            conn
+            |> json(%{id: 123})
+        _ ->
+            conn 
+            |> send_resp(400, "Invalid Payload.")
+    end
   end
 
   def register(conn, _params) do
