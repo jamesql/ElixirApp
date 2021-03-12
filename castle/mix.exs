@@ -46,8 +46,7 @@ defmodule Castle.MixProject do
       {:jason, "~> 1.0"},
       {:plug_cowboy, "~> 2.0"},
       {:bcrypt_elixir, "~> 2.0"},
-      {:snowflake, "~> 1.0.0"},
-      {:json, "~> 1.4"}
+      {:snowflake, "~> 1.0.0"}
     ]
   end
 

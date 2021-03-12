@@ -5,7 +5,7 @@ defmodule CastleWeb.APIController do
     {username, password} = {params["username"], params["password"]}
     f =
         conn
-        |> send_resp(200, username)
+        |> json(%{id: 123})
   end
 
   def register(conn, _params) do
