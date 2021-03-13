@@ -1,6 +1,7 @@
 defmodule Castle.Structures.User do
     use Ecto.Schema
     import Ecto.Changeset
+    import Ecto.Query
 
     schema "users" do
         field :uid, :string
