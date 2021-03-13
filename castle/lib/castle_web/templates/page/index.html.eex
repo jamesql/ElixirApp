@@ -2,6 +2,11 @@
   ElixirApp - Template Login API and WebSocket for Elixir!
 </h1>
 
+<% alias Castle.{Repo, Structures} %>
+<% d = Castle.Structures.User |> Castle.Repo.get(1) %>
+<%= d.email %>
+
+
 <%= form_for @conn, Routes.api_path(@conn, :login), [as: :data], fn f -> %>
   <%= text_input f, :email %>
   <%= submit "Login" %>
