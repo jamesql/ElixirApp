@@ -2,3 +2,7 @@
   ElixirApp - Template Login API and WebSocket for Elixir!
 </h1>
 
+<%= form_for @conn, Routes.api_path(@conn, :login), [as: :data], fn f -> %>
+  <%= text_input f, :email %>
+  <%= submit "Login" %>
+<% end %>

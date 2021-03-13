@@ -1,8 +1,6 @@
 defmodule CastleWeb.APIController do
   use CastleWeb, :controller
 
-  # Not Actually Used
-
   def login(conn, params) do
     case params do
         %{"username" => username, "password" => password} -> 
