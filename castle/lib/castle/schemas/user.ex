@@ -5,6 +5,7 @@ defmodule Castle.Structures.User do
 
     schema "users" do
         field :uid, :string
+        field :email, :string
         field :password, :string
         many_to_many :classes, Castle.Structures.Class, join_through: "class_members"
     end

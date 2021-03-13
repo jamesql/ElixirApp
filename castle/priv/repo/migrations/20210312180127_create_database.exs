@@ -4,6 +4,7 @@ defmodule Castle.Repo.Migrations.CreateDatabase do
   def change do
     create table(:users) do
       add :uid, :string
+      add :email, :string
       add :password, :string
     end
 
