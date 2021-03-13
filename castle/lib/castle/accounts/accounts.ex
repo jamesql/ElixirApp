@@ -17,9 +17,9 @@ defmodule Castle.Accounts do
     def register_email_and_password(%{"email" => e, "pass" => p}) do
         c = User |> Repo.get_by(email: e)
         if c == nil do # Register User
-            s = Snowflake.next_id()
+            {_, s} = Snowflake.next_id()
             ep = Bcrypt.hash_pwd_salt(p)
-            {:ok, u} = Repo.insert(%User{uid: s, email: e, password: p}) 
+            {:ok, u} = Repo.insert(%User{uid: to_string(s), email: e, password: ep}) 
         else # Respond With Error
             {:error, "Account already registered with that email."}
         end
