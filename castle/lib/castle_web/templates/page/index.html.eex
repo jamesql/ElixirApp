@@ -1,8 +1,8 @@
 <h1>
   ElixirApp - Template Login API and WebSocket for Elixir!
 </h1>
-<% import Plug.Conn %>
 
+<% import Plug.Conn %>
 <%= if(get_session(@conn, :c_user), do: "You are logged in.", else: "You are not logged in.") %>
 
 <%= form_for @conn, Routes.api_path(@conn, :login), [as: :body], fn f -> %>

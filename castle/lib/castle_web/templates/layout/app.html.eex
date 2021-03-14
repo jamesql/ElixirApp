@@ -6,7 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Castle · ElixirApp</title>
     <link rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/app.css") %>"/>
-    <script defer type="text/javascript" src="<%= Routes.static_path(@conn, "/js/app.js") %>"></script>
+    <!-- Conditional Import -->
+    <% import Plug.Conn %>
+    <%= if(get_session(@conn, :c_user)) do %> 
+      <script defer type="text/javascript" src="<%= Routes.static_path(@conn, "/js/app.js") %>"></script>
+    <% end %>
+
   </head>
 </html>
 
