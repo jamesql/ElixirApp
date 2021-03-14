@@ -1,5 +1,6 @@
 defmodule CastleWeb.APIController do
   use CastleWeb, :controller
+  import Castle.Accounts
 
   alias Castle.Accounts
 
@@ -9,8 +10,14 @@ defmodule CastleWeb.APIController do
             conn
             |> json(%{id: 123})
         %{"_csrf_token"=> t, "body"=> %{"email"=> email, "password"=> password}} -> # Browser Request
-            conn
-            |> Phoenix.Controller.redirect(to: "/")
+            case %{"email"=> email, "pass"=> password} |> Accounts.auth_with_email_and_password do
+              {:ok, _} -> 
+                conn
+                |> Phoenix.Controller.redirect(to: "/")
+              _ ->
+                conn
+                |> json(%{id: 404})
+            end
         _ -> # Invalid Payload
             conn 
             |> send_resp(400, "Invalid Payload.")
