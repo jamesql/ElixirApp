@@ -10,6 +10,8 @@ defmodule CastleWeb.APIController do
             case %{"email"=> email, "pass"=> password} |> Accounts.auth_with_email_and_password do
               {:ok, _, a} -> # Successful Login
                 conn
+                |> fetch_session
+                |> put_session(:c_user, a)
                 |> Phoenix.Controller.redirect(to: "/")
               {:error, r} -> # Error
                 conn
