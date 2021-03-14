@@ -7,7 +7,7 @@ defmodule Castle.Accounts do
         cond do
             d !== nil -> 
                 # Auth User
-                if(p |> Bcrypt.verify_pass(d.password), do: {:ok, "Logged in!"}, else: {:error, "Incorrect Password."})
+                if(p |> Bcrypt.verify_pass(d.password), do: {:ok, "Logged in!", d}, else: {:error, "Incorrect Password."})
             d == nil ->
                 # Reject User 
                 {:error, "Account not found with that email address."}

@@ -11,7 +11,7 @@ defmodule CastleWeb.APIController do
             |> json(%{id: 123})
         %{"_csrf_token"=> t, "body"=> %{"email"=> email, "password"=> password}} -> # Browser Request
             case %{"email"=> email, "pass"=> password} |> Accounts.auth_with_email_and_password do
-              {:ok, _} -> 
+              {:ok, _, a} -> 
                 conn
                 |> Phoenix.Controller.redirect(to: "/")
               _ ->
