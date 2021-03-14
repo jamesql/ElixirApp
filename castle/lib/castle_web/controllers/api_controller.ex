@@ -10,7 +10,7 @@ defmodule CastleWeb.APIController do
             |> json(%{id: 123})
         %{"_csrf_token"=> t, "body"=> %{"email"=> email, "password"=> password}} -> # Browser Request
             conn
-            |> json(%{id: 222})
+            |> Phoenix.Controller.redirect(to: "/")
         _ -> # Invalid Payload
             conn 
             |> send_resp(400, "Invalid Payload.")
