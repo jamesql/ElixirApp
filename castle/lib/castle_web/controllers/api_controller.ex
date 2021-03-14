@@ -23,9 +23,8 @@ defmodule CastleWeb.APIController do
   end
 
   def register(conn, _params) do
-    f = 
-        conn
-        |> send_resp(200, "OK")
+      conn
+      |> send_resp(200, "OK")
   end
 
   def logout(conn, _params) do
