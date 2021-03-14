@@ -8,12 +8,12 @@ defmodule CastleWeb.APIController do
     case params do
         %{"_csrf_token"=> t, "body"=> %{"email"=> email, "password"=> password}} -> # Browser Request
             case %{"email"=> email, "pass"=> password} |> Accounts.auth_with_email_and_password do
-              {:ok, _, a} -> 
+              {:ok, _, a} -> # Successful Login
                 conn
                 |> Phoenix.Controller.redirect(to: "/")
-              _ ->
+              {:error, r} -> # Error
                 conn
-                |> json(%{id: 404})
+                |> json(%{reason: r})
             end
         _ -> # Invalid Payload
             conn 
