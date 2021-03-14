@@ -1,7 +1,6 @@
 defmodule CastleWeb.APIController do
   use CastleWeb, :controller
-  import Castle.Accounts
-
+  
   alias Castle.Accounts
 
   def login(conn, params) do
