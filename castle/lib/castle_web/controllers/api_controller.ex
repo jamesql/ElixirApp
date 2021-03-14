@@ -1,6 +1,6 @@
 defmodule CastleWeb.APIController do
   use CastleWeb, :controller
-  
+
   alias Castle.Accounts
 
   def login(conn, params) do
@@ -26,6 +26,13 @@ defmodule CastleWeb.APIController do
     f = 
         conn
         |> send_resp(200, "OK")
+  end
+
+  def logout(conn, _params) do
+    conn 
+    |> fetch_session
+    |> clear_session
+    |> Phoenix.Controller.redirect(to: "/")
   end
 
 end

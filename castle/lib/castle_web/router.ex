@@ -24,6 +24,7 @@ defmodule CastleWeb.Router do
 
     post "/login", APIController, :login
     post "/register", APIController, :register
+    post "/logout", APIController, :logout
 
   end
   
