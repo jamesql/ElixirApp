@@ -7,7 +7,8 @@
 <%= d.email %>
 
 
-<%= form_for @conn, Routes.api_path(@conn, :login), [as: :data], fn f -> %>
+<%= form_for @conn, Routes.api_path(@conn, :login), [as: :body], fn f -> %>
   <%= text_input f, :email %>
+  <%= text_input f, :password %>
   <%= submit "Login" %>
 <% end %>
