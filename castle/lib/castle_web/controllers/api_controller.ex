@@ -6,7 +6,7 @@ defmodule CastleWeb.APIController do
 
   def login(conn, params) do
     case params do
-        %{"_csrf_token"=> t, "body"=> %{"email"=> email, "password"=> password}} -> # Browser Request
+        %{"_csrf_token"=> _, "body"=> %{"email"=> email, "password"=> password}} -> # Browser Request
             case %{"email"=> email, "pass"=> password} |> Accounts.auth_with_email_and_password do
               {:ok, _, a} -> # Successful Login
                 conn
